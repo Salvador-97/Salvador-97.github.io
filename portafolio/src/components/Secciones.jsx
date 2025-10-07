@@ -1,25 +1,32 @@
 import '../index.css'
-import Tarjetas from './Tarjetas.jsx';
+import Proyectos from './Proyectos.jsx';
 
-export function Seccion({Titulo, descripcion }) {
+export function Seccion({Titulo}) {
     return (
         <div>
-            <h2>{Titulo}</h2>
-            <p>{descripcion}</p>
+            <h3 className='w-1/4 text-center text-[2rem] mx-auto my-[1.5rem] 
+            text-[#fff] font-[700] text-shadow[0_0_0.5px_#2ECC4050]'>{Titulo}</h3>
         </div>
     );
 }
 
-export default function Secciones({ nombre }) {
+export default function Secciones() {
     return(
-        <div className='border flex flex-col justify-center items-center'> 
-            <Seccion Titulo={nombre} descripcion=""/>
-            <div className='border'>
-                <div className="flex flex-wrap border mx-auto">
-                    <Tarjetas nombre="Proyecto 1" descripcion="Descripción corta" />
-                    <Tarjetas nombre="Proyecto 2" descripcion="Otra descripción" />
-                </div>
+        <>
+            <div className='w-4/5 mx-auto'>
+                <Seccion Titulo="Proyectos"/>
+                <Proyectos />
             </div>
-        </div>
+            <div className='w-3/4 mx-auto'>
+                <Seccion Titulo="Habilidades"/>
+            </div>
+            <div className='w-3/4 mx-auto'>
+                <Seccion Titulo="Acerca de mi"/>
+            </div>
+            <div className='w-3/4 mx-auto'>
+                <Seccion Titulo="Contacto"/>
+            </div>
+        
+        </>
     )
 }
