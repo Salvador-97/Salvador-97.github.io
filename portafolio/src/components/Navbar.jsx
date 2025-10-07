@@ -21,9 +21,9 @@ export default function Navbar({ }) {
             <div className='flex justify-between mx-[4rem] mt-[1rem]'>
                 <div>
                     <p className='text-[#fff] font-[700]'>
-                        <i class="fa-solid fa-code pr-[0.5rem]"></i>
+                        <i className="fa-solid fa-code pr-[0.5rem]"></i>
                         Salvador Gutiérrez Olvera
-                        <i class="fa-solid fa-cat pl-[0.5rem]"></i>
+                        <i className="fa-solid fa-cat pl-[0.5rem]"></i>
                     </p>
                 </div>
                 <div className='w-1/2'>

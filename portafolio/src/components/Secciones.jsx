@@ -5,7 +5,9 @@ export function Seccion({Titulo}) {
     return (
         <div>
             <h3 className='w-1/4 text-center text-[2rem] mx-auto my-[1.5rem] 
-            text-[#fff] font-[700] text-shadow[0_0_0.5px_#2ECC4050]'>{Titulo}</h3>
+            text-[#fff] font-[700] text-shadow[0_0_0.5px_#2ECC4050]'>
+                {Titulo}
+            </h3>
         </div>
     );
 }
