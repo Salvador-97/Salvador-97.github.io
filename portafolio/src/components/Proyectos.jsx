@@ -1,12 +1,14 @@
-import { estado, lenguajes, proyecto1, proyecto2, lenguajesProyecto1, lenguajesProyecto2} from "../utils/tarjetaEstados";
+import { estado, lenguajes, proyecto1, proyecto2, lenguajesProyecto1, 
+        lenguajesProyecto2, proyecto3, lenguajesProyecto3, iconos} 
+from "../utils/tarjetaEstados";
 
-export function Tarjeta({informacion, lenguajesProyecto}) {
+export function Tarjeta({informacion, lenguajesProyecto, icono}) {
 
     return (
         <>
-        <a href="#" className='rounded-[1.5rem] mx-auto w-[30%] pb-[1rem] bg-[#1A1A1D] shadow-[0_0_25px_5px_#8A5CF650] transform transition-transform hover:scale-110 duration-900 ease-out group overflow-hidden relative h-[22rem]'>
+        <a href="#" className='rounded-[1.5rem] mx-auto w-[30%] pb-[1rem] bg-[#1A1A1D] shadow-[0_0_25px_5px_#8A5CF650] transform transition-transform hover:scale-110 duration-900 ease-out group overflow-hidden relative h-[22rem] hover:shadow-[0_0_25px_8px_#8A5CF680]'>
             <div className='text-center rounded-t-[1.5rem] mb-[1rem] bg-[#8A5CF6]'>
-                <i className="fa-solid fa-folder fa-6x py-[0.8rem] text-[#FF851B]"></i>
+                <i className={`${icono} fa-6x py-[0.8rem] text-[#FF851B]`}></i>
             </div>
             <div>
                 <div className='text-center text-[#E0E6F0] relative'>
@@ -49,8 +51,8 @@ export function Tarjeta({informacion, lenguajesProyecto}) {
 export default function Proyectos () {
     return (
         <div className='flex'>
-                <Tarjeta informacion={proyecto1} lenguajesProyecto={lenguajesProyecto1}/>
-                <Tarjeta informacion={proyecto2} lenguajesProyecto={lenguajesProyecto2}/>
-        </div> 
+                <Tarjeta informacion={proyecto1} lenguajesProyecto={lenguajesProyecto1} icono={iconos.almacen}/>
+                <Tarjeta informacion={proyecto2} lenguajesProyecto={lenguajesProyecto2} icono={iconos.tarimas}/>
+                <Tarjeta informacion={proyecto3} lenguajesProyecto={lenguajesProyecto3} icono={iconos.series}/>        </div> 
     );
 }
