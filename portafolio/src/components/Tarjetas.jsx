@@ -2,7 +2,7 @@ export function Tarjeta({ nombre, descripcion }) {
     return (
         <>
         <a href="#" className='rounded-[1.5rem] mx-auto w-[30%] pb-[1rem] bg-[#1A1A1D] shadow-[0_0_25px_5px_#8A5CF650]'>
-                    <div className='text-center rounded-t-[1.5rem] mb-[1rem] bg-[#8A5CF6]'>
+                    <div className='text-center rounded-t-[1.5rem] mb-[1rem] bg-[#a584f1]'>
                         <i className="fa-solid fa-folder fa-6x py-[0.8rem] text-[#FF851B]"></i>
                     </div>
                     <div className='w-5/6 mx-auto'>
