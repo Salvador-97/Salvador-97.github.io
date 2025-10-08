@@ -2,7 +2,7 @@ import '../index.css'
 
 export function ItemsNav ({ nombre }) {
     return (
-        <li><a href='#' className='no-underline text-[#fff] font-[700]'>
+        <li><a href='#' className='no-underline text-[#fff] font-[700] hover:text-[#00C4CC]'>
             {nombre}</a>
         </li>
     );
