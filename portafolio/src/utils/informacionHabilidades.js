@@ -98,7 +98,7 @@ const resultadosJSON = {
 
 const organizacionJSON = {
     nombre: 'Organización',
-    icono: 'fa-solid fa-sitemap',
+    icono: 'fa-solid fa-chart-pie',
     color: '#302C82'
 }
 const aprendizajeJSON = {
