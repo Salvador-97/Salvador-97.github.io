@@ -26,14 +26,10 @@ export default function Secciones() {
                 <Seccion Titulo="Habilidades" color='#4F6CF4'/>
                 <Habilidades />
             </div>
-            <div className='w-3/4 mx-auto'>
+            <div className='w-3/4 mx-auto pb-[1rem]'>
                 <Seccion Titulo="Acerca de mi" color='#3FC460'/>
                 <AcercaMi />
             </div>
-            <div className='w-3/4 mx-auto'>
-                <Seccion Titulo="Contacto"/>
-            </div>
-        
         </>
     )
 }
