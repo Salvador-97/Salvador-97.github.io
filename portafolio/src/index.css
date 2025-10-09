@@ -30,3 +30,9 @@ font-family
     /* color: #333; */
   }
 }
+
+:root{ --swiper-theme-color: #fff !important}
+body {
+  background: linear-gradient(to bottom, #222945 0%, #161A29 50%, #0B0B0D 100%);
+}
+

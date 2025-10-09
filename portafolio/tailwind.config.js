@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       colors:{
-        'css-icon-blue': '#0074D9',
-        'html-icon-orange': '#FF851B',
+        'color-texto': '#A5B4FC',
+        'htm': '#FF851B',
       }
     },
   },

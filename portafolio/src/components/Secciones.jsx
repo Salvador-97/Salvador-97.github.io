@@ -18,17 +18,17 @@ export function Seccion({Titulo, color}) {
 export default function Secciones() {
     return(
         <>
-            <div className='w-4/5 mx-auto'>
-                <Seccion Titulo="Proyectos" color='#8A5CF6'/>
-                <Proyectos />
+            <div className='w-3/4 mx-auto my-[3rem]'>
+                <Seccion Titulo="Sobre mi..." color='#fff'/>
+                <AcercaMi />
             </div>
             <div className='w-[85%] mx-auto'>
                 <Seccion Titulo="Habilidades" color='#4F6CF4'/>
                 <Habilidades />
             </div>
-            <div className='w-3/4 mx-auto pb-[1rem]'>
-                <Seccion Titulo="Acerca de mi" color='#3FC460'/>
-                <AcercaMi />
+            <div className='w-4/5 mx-auto'>
+                <Seccion Titulo="Proyectos" color='#8A5CF6'/>
+                <Proyectos />
             </div>
         </>
     )

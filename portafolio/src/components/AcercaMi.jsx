@@ -1,45 +1,85 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 import 'swiper/css';
-import "swiper/css/navigation";
+import 'swiper/css/pagination'
+import '../index.css'
+
+import { aboutMe, informacion, listaInfo } from '../utils/informacionContacto';
+import { listaEstudios, estudios, listaTrabajos, trabajos } from '../utils/informacionContacto';
 
 export function Carousel() {
     return (
         <Swiper
-            modules={[Navigation]}
-            navigation
+            modules={[Pagination, Autoplay]}
+            pagination={{ clickable: true }}
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
             spaceBetween={20}
             slidesPerView={1}
             loop={true}
+            speed={800}
             className='w-[45rem] h-[15rem] m-auto'
         >
-            <SwiperSlide className='bg-[#18b43a] h-full'>
-                <div className='h-full flex items-center text-center text-[#fff] mx-[4rem] font-[700]'>
-                    
+            <SwiperSlide className='bg-[#17854A] h-full'>
+                <div className='h-full flex items-center text-justify text-[#E6E9F0] mx-[4rem] font-[700]'>
+                    {aboutMe}
                 </div>
             </SwiperSlide>
-            <SwiperSlide className='bg-[#F52727]'>
-                <p>Estudios</p>
+            <SwiperSlide className='bg-[#178582]'>
+                <div className='text-[#E6E9F0] font-[700] flex flex-col justify-center items-center text-center h-full mx-[2.5rem]'>
+                    <h3>Educación</h3>
+                    {listaEstudios.map((estudio, index) => (
+                        <div key={index} className='flex justify-between my-[0.5rem] w-[90%] p-[0.5rem] rounded-[1rem]'>
+                            <div className='text-left'>
+                                {estudios[estudio].nombre} <br />
+                                {estudios[estudio].carrera}
+                            </div>
+                            <div className='text-right'>
+                                {estudios[estudio].generacion} <br />
+                                {estudios[estudio].ubicacion}
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </SwiperSlide>
-            <SwiperSlide className='bg-[#276FF5]'>
-                <p>Experiencia</p>
+            <SwiperSlide className='bg-[#851752]'>
+                <div className='text-[#E6E9F0] font-[700] flex flex-col justify-center items-center text-center h-full mx-[2.5rem]'>
+                    <h3>Experiencia laboral</h3>
+                    {listaTrabajos.map((trabajo, index) => (
+                        <div key={index} className='flex justify-between my-[0.5rem] w-[90%] p-[0.5rem] rounded-[1rem]'>
+                            <div className='text-left'>
+                                {trabajos[trabajo].nombre} <br />
+                                {trabajos[trabajo].puesto}
+                            </div>
+                            <div className='text-right'>
+                                {trabajos[trabajo].estancia} <br />
+                                {trabajos[trabajo].ubicacion}
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </SwiperSlide>
         </Swiper>
     );
 }
 
+export function Contacto() {
+    return (
+        <ul className="text-[1.2rem]">
+            {listaInfo.map((info, index) => (
+                <li key={index} className='text-[1rem]'>
+                    <i className={`${informacion[info].icono} pr-[0.5rem]`}
+                        style={{ color: informacion[info].color }}></i>
+                    {informacion[info].valor}</li>
+            ))}
+        </ul>
+    );
+}
+
 export default function AcercaMi() {
     return (
-        <div className="flex shadow-[0_0_25px_9px_#3FC46090] rounded-[1rem] overflow-x-hidden">
-            <div className="bg-[#1A1A1D] rounded-[1rem] p-[1rem] text-[#fff]">
-                <ul className="text-[1.2rem]">
-                    <li><i class="fa-solid fa-circle-user"></i>Salvador Gutiérrez Olvera</li>
-                    <li><i class="fa-solid fa-phone"></i>5582214610</li>
-                    <li><i class="fa-solid fa-envelope"></i>salvador.go_97@hotmail.com</li>
-                    <li><i class="fa-solid fa-location-dot"></i>Teoloyucan, Edo. de México</li>
-                    <li><i class="fa-brands fa-github"></i></li>
-                    <li><i class="fa-solid fa-file-invoice"></i>CV</li>
-                </ul>
+        <div className="flex rounded-[1rem] overflow-x-hidden">
+            <div className="flex items-center justify-center w-[30%] bg-[#1A1A1D] rounded-[1rem] p-[1rem] text-[#A5B4FC] font-[700]">
+                <Contacto />
             </div>
             <Carousel />
         </div>

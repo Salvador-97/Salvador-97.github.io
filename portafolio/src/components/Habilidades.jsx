@@ -3,7 +3,7 @@ import { lenguajes, listaLenguajes, listaSkills, skills } from "../utils/informa
 export function Habilidad({lenguaje}) {
     return (
         <div className="flex w-[95%] transform transition-transform hover:scale-105 duration-700 ease-out justify-center">
-            <div className="w-[100%] flex justify-around bg-[#1A1A1D] p-[1rem] mb-[0.8rem] rounded-[1rem] shadow-[0_0_25px_5px_#0074D950]">
+            <div className="w-[100%] flex justify-around bg-[#1A1A1D] hover:bg-[#212122] p-[1rem] mb-[0.8rem] rounded-[1rem] shadow-[0_0_25px_5px_#0074D950]">
                 <div className="p-[1rem]">
                     <i 
                     className={`${lenguaje.icono} text-[5rem]`} 
@@ -27,7 +27,7 @@ export function Skills({skill}) {
         <div className="flex w-full h-[12rem] justify-center transform transition-transform hover:scale-110 duration-900 ease-out">
             <div className="w-[80%] flex justify-around bg-[#1A1A1D] p-[1rem] mb-[0.8rem] rounded-[1rem] shadow-[0_0_25px_5px_#0074D950]">
                 <div className="p-[0.5rem]">
-                    <i class={`
+                    <i className={`
                         ${skill.icono} text-[5rem] text-[#fff] mb-[0.5rem]`}
                         style={{color: skill.color}}></i>
                     <p className="text-[#fff] font-[700]">{skill.nombre}</p>
