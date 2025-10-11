@@ -8,6 +8,27 @@ import { aboutMe, informacion, listaInfo } from '../utils/informacionContacto';
 import { listaEstudios, estudios, listaTrabajos, trabajos } from '../utils/informacionContacto';
 import { copiar } from '../utils/copiarContenido';
 
+export function InformacionSlides({ titulo, lista }) {
+    return (
+        <div className='text-[#E6E9F0] font-[700] flex flex-col justify-center items-center text-center h-full mx-[2.5rem]'>
+            <h3>{titulo}</h3>
+            {lista.map((valor, index) => (
+                <div key={index} className='flex justify-between my-[0.5rem] w-[90%] p-[0.5rem] rounded-[1rem]'>
+                    <div className='text-left'>
+                        {estudios[valor]?.nombre || trabajos[valor]?.nombre} <br />
+                        {estudios[valor]?.carrera || trabajos[valor]?.puesto}
+                    </div>
+                    <div className='text-right'>
+                        {estudios[valor]?.generacion || trabajos[valor]?.estancia} <br />
+                        {estudios[valor]?.ubicacion || trabajos[valor]?.ubicacion}
+                    </div>
+                </div>
+            ))}
+        </div>
+    );
+}
+
+
 export function Carousel() {
     return (
         <Swiper
@@ -26,38 +47,10 @@ export function Carousel() {
                 </div>
             </SwiperSlide>
             <SwiperSlide className='bg-[#178582]'>
-                <div className='text-[#E6E9F0] font-[700] flex flex-col justify-center items-center text-center h-full mx-[2.5rem]'>
-                    <h3>Educación</h3>
-                    {listaEstudios.map((estudio, index) => (
-                        <div key={index} className='flex justify-between my-[0.5rem] w-[90%] p-[0.5rem] rounded-[1rem]'>
-                            <div className='text-left'>
-                                {estudios[estudio].nombre} <br />
-                                {estudios[estudio].carrera}
-                            </div>
-                            <div className='text-right'>
-                                {estudios[estudio].generacion} <br />
-                                {estudios[estudio].ubicacion}
-                            </div>
-                        </div>
-                    ))}
-                </div>
+                <InformacionSlides titulo='Estudios' lista={listaEstudios} />
             </SwiperSlide>
             <SwiperSlide className='bg-[#851752]'>
-                <div className='text-[#E6E9F0] font-[700] flex flex-col justify-center items-center text-center h-full mx-[2.5rem]'>
-                    <h3>Experiencia laboral</h3>
-                    {listaTrabajos.map((trabajo, index) => (
-                        <div key={index} className='flex justify-between my-[0.5rem] w-[90%] p-[0.5rem] rounded-[1rem]'>
-                            <div className='text-left'>
-                                {trabajos[trabajo].nombre} <br />
-                                {trabajos[trabajo].puesto}
-                            </div>
-                            <div className='text-right'>
-                                {trabajos[trabajo].estancia} <br />
-                                {trabajos[trabajo].ubicacion}
-                            </div>
-                        </div>
-                    ))}
-                </div>
+                <InformacionSlides titulo='Trabajos' lista={listaTrabajos} />
             </SwiperSlide>
         </Swiper>
     );
@@ -66,10 +59,10 @@ export function Carousel() {
 export function Enlace({ info }) {
     return (
         <>
-        <a href={informacion[info].link} target='_blank' 
-        className='hover:text-[#dee2f8] transition-all duration-700 ease-out cursor-pointer'>
-            {informacion[info].valor}
-        </a>
+            <a href={informacion[info].link} target='_blank'
+                className='hover:text-[#dee2f8] transition-all duration-700 ease-out cursor-pointer'>
+                {informacion[info].valor}
+            </a>
         </>
     );
 }
