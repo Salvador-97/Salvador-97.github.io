@@ -5,38 +5,55 @@ en programación orientada a objetos y desarrollo web (HTML, CSS, Python y C).
 He trabajado con bases de datos SQL, automatización con Excel y documentación 
 técnica en LaTeX.`
 
-export const listaInfo = ['nombre', 'telefono', 'correo', 'direccion', 'github', 'cv'];
+export const listaInfo = ['nombre', 'telefono', 'correo', 'direccion', 'github', 'linkedin','cv'];
 
 export const informacion = {
     nombre: {
         valor:'Salvador Gutiérrez Olvera',
         icono: 'fa-solid fa-user',
-        color: '#983CDE'
+        color: '#983CDE',
+        enlace: false
+
     },
     telefono: {
         valor: '5582214610',
         icono: 'fa-solid fa-phone',
-        color: '#3C88DE'
+        color: '#3C88DE',
+        enlace: false
+
     },
     correo: {
         valor: 'salvador.go_97@hotmail.com',
         icono: 'fa-solid fa-envelope',
-        color: '#DE9E3C'
+        color: '#DE9E3C',
+        enlace: false
     },
     direccion: {
         valor: 'Teoloyucan, Edo. de Méx.',
         icono: 'fa-solid fa-location-dot',
-        color: '#DE3C3C'
+        color: '#DE3C3C',
+        enlace: false
     },
     github: {
-        valor: 'https://github.com/Salvador-97',
+        valor: 'Salvador_97',
         icono: 'fa-brands fa-github',
-        color: '#fff'
+        color: '#fff',
+        link: 'https://github.com/Salvador-97',
+        enlace: true
     },
+    linkedin: {
+        valor: 'salvadorgo97',
+        icono: 'fa-brands fa-linkedin',
+        color: '#2787F5',
+        link: 'https://www.linkedin.com/in/salvadorgo97/',
+        enlace: true
+    }
+    ,
     cv: {
         valor: 'CV completo',
         icono: 'fa-solid fa-circle-down',
-        color: '#2ECF29'
+        color: '#2ECF29',
+        enlace: true
     }
 }
 

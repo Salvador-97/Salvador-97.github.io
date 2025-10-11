@@ -6,13 +6,14 @@ import '../index.css'
 
 import { aboutMe, informacion, listaInfo } from '../utils/informacionContacto';
 import { listaEstudios, estudios, listaTrabajos, trabajos } from '../utils/informacionContacto';
+import { copiar } from '../utils/copiarContenido';
 
 export function Carousel() {
     return (
         <Swiper
             modules={[Pagination, Autoplay]}
             pagination={{ clickable: true }}
-            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            // autoplay={{ delay: 3000, disableOnInteraction: false }}
             spaceBetween={20}
             slidesPerView={1}
             loop={true}
@@ -62,14 +63,36 @@ export function Carousel() {
     );
 }
 
+export function Enlace({ info }) {
+    return (
+        <>
+        <a href={informacion[info].link} target='_blank' 
+        className='hover:text-[#dee2f8] transition-all duration-700 ease-out cursor-pointer'>
+            {informacion[info].valor}
+        </a>
+        </>
+    );
+}
+
+export function Dato({ info }) {
+    return (
+        <>
+            <div onClick={() => copiar(info)} name={info}>
+                {informacion[info].valor}
+            </div>
+        </>
+    );
+}
+
 export function Contacto() {
     return (
         <ul className="text-[1.2rem]">
             {listaInfo.map((info, index) => (
-                <li key={index} className='text-[1rem]'>
+                <li key={index} className='text-[1rem] flex hover:text-[#dee2f8] transition-all duration-700 ease-out cursor-pointer'>
                     <i className={`${informacion[info].icono} pr-[0.5rem]`}
                         style={{ color: informacion[info].color }}></i>
-                    {informacion[info].valor}</li>
+                    {informacion[info].enlace ? <Enlace info={info} /> : <Dato info={info} />}
+                </li>
             ))}
         </ul>
     );
@@ -78,7 +101,7 @@ export function Contacto() {
 export default function AcercaMi() {
     return (
         <div className="flex rounded-[1rem] overflow-x-hidden">
-            <div className="flex items-center justify-center w-[30%] bg-[#1A1A1D] rounded-[1rem] p-[1rem] text-[#A5B4FC] font-[700]">
+            <div className="flex items-center justify-center w-[30%] bg-[#1A1A1D] rounded-lr-[1rem] p-[1rem] text-[#A5B4FC] font-[700]">
                 <Contacto />
             </div>
             <Carousel />

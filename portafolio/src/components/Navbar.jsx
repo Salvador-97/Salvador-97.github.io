@@ -2,7 +2,7 @@ import '../index.css'
 
 export function ItemsNav ({ nombre }) {
     return (
-        <li><a href='#' className='no-underline text-[#fff] font-[700] hover:text-[#00C4CC]'>
+        <li><a href='#' className='no-underline text-[#fff] font-[700] hover:text-[#DD8FFA]'>
             {nombre}</a>
         </li>
     );
@@ -20,10 +20,10 @@ export default function Navbar({ }) {
         <nav className='py-[0.8rem]'>
             <div className='flex justify-between mx-[4rem] mt-[1rem]'>
                 <div>
-                    <p className='text-[#fff] font-[700]'>
+                    <p className='text-[#fff] font-[700] hover:text-[#DD8FFA] cursor-pointer duration-700 transition-all ease-out transform hover:scale-110'>
                         <i className="fa-solid fa-code pr-[0.5rem]"></i>
                         Salvador Gutiérrez Olvera
-                        <i className="fa-solid fa-cat pl-[0.5rem]"></i>
+                        <i className="fa-solid fa-code pl-[0.5rem]"></i>
                     </p>
                 </div>
                 <div className='w-1/2'>

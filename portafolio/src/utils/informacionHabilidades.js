@@ -1,4 +1,5 @@
-export const listaLenguajes = ['html', 'css', 'javascript', 'python', 'sql', 'react', 'node']
+export const listaFront = ['html', 'css', 'javascript', 'react']
+export const listaBack = ['python', 'sql', 'node']
 
 const htmlJSON = {
     icono: 'fa-brands fa-html5',
@@ -36,8 +37,8 @@ const pythonJSON = {
     colorIcono: '#0074D9',
     conocimiento: {
         item1: 'Automatización de procesos',
-        item2: 'Desarrollo de con Tkinter/CustomTkinter',
-        item3: 'Conexión a archivos CSV, JSON y SQLite',
+        item2: 'UI con Tkinter/CustomTkinter',
+        item3: 'Conexión a archivos CSV y SQLite',
         item4: 'Backend web con Flask'
     }
 }
@@ -56,9 +57,10 @@ const reactJSON = {
     icono: 'fa-brands fa-react',
     colorIcono: '#1EC7C7',
     conocimiento: {
-        item1: 'Desarrollo de interfaces modulares y componentes reutilizables.',
-        item2: 'Manejo de estado con props y hooks.',
-        item3: 'Integración con APIs REST y control de flujo de datos.',
+        item1: 'Desarrollo de interfaces modulares.',
+        item2: 'Componentes reutilizables.',
+        // item3: 'Manejo de estado con props y hooks.',
+        item4: 'Integración con APIs REST y control de flujo de datos.',
     }
 }
 

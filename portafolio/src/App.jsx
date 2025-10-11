@@ -5,9 +5,9 @@ function App() {
   return (
     <>
     <Navbar />
-    <body className="h-full bg-[#1A1D2E]">
+    <main>
         <Secciones/>
-    </body>
+    </main>
     </>
   );
 }

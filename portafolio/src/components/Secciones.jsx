@@ -9,7 +9,7 @@ export function Seccion({Titulo, color}) {
             <h3 className={`w-1/4 text-center text-[2rem] mx-auto my-[1.5rem] 
             font-[700]`}
             style={{color: color}}>
-                {Titulo}
+                <i className="fa-solid fa-terminal pr-[0.5rem]"></i>{Titulo}
             </h3>
         </div>
     );
