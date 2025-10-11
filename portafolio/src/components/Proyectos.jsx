@@ -2,7 +2,7 @@ import {
     estado, lenguajes, proyecto1, proyecto2, lenguajesProyecto1,
     lenguajesProyecto2, proyecto3, lenguajesProyecto3, iconos
 }
-from "../utils/tarjetaEstados";
+from "../utils/informacionProyectos";
 
 export function Tarjeta({ informacion, lenguajesProyecto, icono }) {
 

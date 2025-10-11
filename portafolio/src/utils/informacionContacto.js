@@ -67,7 +67,7 @@ export const estudios = {
         ubicacion:  'Coyoacán, CDMX'
     },
     bachillerato: {
-        nombre: ' Colegio de Ciencias y Humanidades Vallejo',
+        nombre: ' CCH Vallejo, UNAM',
         carrera: 'Bachillerato',
         generacion: 'Agosto 2012 -- Junio 2015',
         ubicacion:  ' Gustavo A. Madero, CDMX'
@@ -85,7 +85,7 @@ export const trabajos = {
     },
     selectshop: {
         nombre: 'Comercializadora de Marcas JSB',
-        puesto: 'Bachillerato',
+        puesto: 'Ayudante General',
         estancia: 'Junio 2024 -- Enero 2025',
         ubicacion:  'Tepotzotlán, Méx.'
     }

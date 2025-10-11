@@ -8,22 +8,24 @@ import { aboutMe, informacion, listaInfo } from '../utils/informacionContacto';
 import { listaEstudios, estudios, listaTrabajos, trabajos } from '../utils/informacionContacto';
 import { copiar } from '../utils/copiarContenido';
 
-export function InformacionSlides({ titulo, lista }) {
+export function InformacionSlides({ titulo, lista, colorFondo }) {
     return (
         <div className='text-[#E6E9F0] font-[700] flex flex-col justify-center items-center text-center h-full mx-[2.5rem]'>
-            <h3>{titulo}</h3>
-            {lista.map((valor, index) => (
-                <div key={index} className='flex justify-between my-[0.5rem] w-[90%] p-[0.5rem] rounded-[1rem]'>
-                    <div className='text-left'>
+            <div className='text-[1.3rem]'>{titulo}</div>
+            <div className='flex w-[95%]'>
+                {lista.map((valor, index) => (
+                <div key={index} className='flex flex-col text-center  my-[0.5rem] w-[90%] p-[0.5rem] rounded-[1rem] justify-between mx-[0.8rem]' style={{background: colorFondo}}>
+                    <div>
                         {estudios[valor]?.nombre || trabajos[valor]?.nombre} <br />
                         {estudios[valor]?.carrera || trabajos[valor]?.puesto}
                     </div>
-                    <div className='text-right'>
+                    <div>
                         {estudios[valor]?.generacion || trabajos[valor]?.estancia} <br />
                         {estudios[valor]?.ubicacion || trabajos[valor]?.ubicacion}
                     </div>
                 </div>
             ))}
+            </div>
         </div>
     );
 }
@@ -47,10 +49,10 @@ export function Carousel() {
                 </div>
             </SwiperSlide>
             <SwiperSlide className='bg-[#178582]'>
-                <InformacionSlides titulo='Estudios' lista={listaEstudios} />
+                <InformacionSlides titulo='Estudios' lista={listaEstudios} colorFondo='#0F5E5C' />
             </SwiperSlide>
             <SwiperSlide className='bg-[#851752]'>
-                <InformacionSlides titulo='Trabajos' lista={listaTrabajos} />
+                <InformacionSlides titulo='Trabajos' lista={listaTrabajos} colorFondo='#5E0F3A'/>
             </SwiperSlide>
         </Swiper>
     );
@@ -81,7 +83,7 @@ export function Contacto() {
     return (
         <ul className="text-[1.2rem]">
             {listaInfo.map((info, index) => (
-                <li key={index} className='text-[1rem] flex hover:text-[#dee2f8] transition-all duration-700 ease-out cursor-pointer'>
+                <li key={index} className='text-[1rem] flex items-center hover:text-[#dee2f8] transition-all duration-700 ease-out cursor-pointer'>
                     <i className={`${informacion[info].icono} pr-[0.5rem]`}
                         style={{ color: informacion[info].color }}></i>
                     {informacion[info].enlace ? <Enlace info={info} /> : <Dato info={info} />}
